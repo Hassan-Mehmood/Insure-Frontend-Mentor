@@ -1,0 +1,76 @@
+.nav-section {
+  position: relative;
+  z-index: 3;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 4.9375rem;
+  .logo {
+    img {
+      cursor: pointer;
+    }
+  }
+  
+  .nav-links {
+    a {
+      color: $darkGrayishViolet;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+
+      &:not(:last-child) {
+        margin-right: 1.5625rem;
+      }
+      &:hover {
+        color: $darkViolet;
+      }
+      &:last-child:hover {
+        color: $veryLightGray;
+      }
+    }
+
+    .nav-links-parent {
+      @include devices(tablet-down) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100vw;
+        height: calc(100vh - 4.9375rem);
+        background-color: $veryDarkViolet;
+        background-image: url("../../images/bg-pattern-mobile-nav.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right bottom;
+        position: absolute;
+        top: calc(0px + 4.9375rem);
+        left: 0;
+        padding-top: 3.125rem;
+        transform: translateX(100%);
+        transition: transform 200ms ease-in-out;
+        z-index: 999;
+
+        a {
+          margin: 0 0 3.125rem 0;
+          color: $veryLightGray;
+        }
+        .btn-border-dark {
+          max-width: 20rem;
+          width: 90%;
+          text-align: center;
+          border: 2px solid $veryLightGray;
+        }
+      }
+    }
+
+    .transform {
+      transform: translateX(0);
+    }
+  }
+
+  .menu-icon {
+    cursor: pointer;
+  }
+}

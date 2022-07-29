@@ -1,0 +1,24 @@
+@mixin devices($breakpoint) {
+  //the name of the mixin is devices
+
+  @if $breakpoint == tablet-down {
+    @media only screen and (max-width: 42.4375em) {//680 PX
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-up {
+    @media only screen and (min-width: 42.5em) { //680 PX
+      @content;
+    }
+  }
+  @if $breakpoint == mobile-down {
+    @media only screen and (max-width: 30em) {//480 px
+      @content;
+    }
+  }
+  @if $breakpoint == mobile-up {
+    @media only screen and (min-width: 30.0625em) { //481 px
+      @content;
+    }
+  }
+}

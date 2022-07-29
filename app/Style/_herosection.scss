@@ -1,0 +1,80 @@
+.hero-section {
+  background-color: $veryDarkViolet;
+
+  .bg-intro-left-desktop {
+    position: absolute;
+    bottom: 0rem;
+  }
+  .bg-intro-right-desktop {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    min-height: 37.5rem;
+
+    .col-1 {
+      // order: 2;
+      flex: 1;
+      img {
+        position: relative;
+        top: 6.5rem;
+        width: 100%;
+      }
+    }
+
+    .col-2 {
+      color: $veryLightGray;
+      flex: 1;
+      padding-right: 2rem;
+      h2 {
+        font-family: $serifDisplay;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        line-height: 0.9;
+        position: relative;
+        &::before {
+          content: "";
+          width: 151px;
+          height: 1px;
+          background-color: $darkGrayishViolet;
+          position: absolute;
+          top: -3rem;
+        }
+      }
+      p {
+        margin: 2.5rem 0;
+      }
+
+      a.btn {
+        position: relative;
+        z-index: 5;
+      }
+
+    }
+    @include devices(tablet-down) {
+      flex-direction: column;
+      .col-1 {
+        width: 100%;
+        max-width: 30rem;
+
+        img {
+          top: 0;
+        }
+      }
+      .col-2 {
+        padding: 6.25rem 0;
+        text-align: center;
+        h2 {
+          &::before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

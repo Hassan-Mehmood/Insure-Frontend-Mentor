@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  font-family: $karla;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 69.375rem;
+  width: 95%;
+  margin: 0 auto;
+  @include devices("tablet-down") {
+    width: 85%;
+  }
+}
+.container-tablet-up {
+  max-width: 69.375rem;
+  width: 100%;
+  margin: 0 auto;
+  @include devices("tablet-up") {
+    width: 85%;
+  }
+}
+.container-tablet-down {
+  @include devices("tablet-down") {
+    width: 85%;
+  }
+}
+
+.btn {
+  text-transform: uppercase;
+  padding: 0.9375em 1.5625em;
+  background: transparent;
+  cursor: pointer;
+  z-index: 3333;
+}
+
+.btn-border-light {
+  color: $veryLightGray;
+  border: 2px solid $veryLightGray;
+
+  &:hover {
+    background-color: $veryLightGray;
+    color: $veryDarkViolet;
+  }
+}
+
+.btn-border-dark {
+  border: 2px solid $darkViolet;
+  color: $darkViolet;
+  &:hover {
+    background-color: $veryDarkViolet;
+    color: $veryLightGray;
+  }
+}
+
+.hide-for-mobile {
+  @include devices("tablet-down") {
+    display: none;
+  }
+}
+.hide-for-desktop {
+  @include devices("tablet-up") {
+    display: none;
+  }
+}

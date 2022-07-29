@@ -1,0 +1,37 @@
+.how-we-work-section {
+  text-align: center;
+  background-color: $veryDarkViolet;
+  padding: 4.6875rem 2.8125rem;
+  position: relative;
+  .wrapper {
+    h2 {
+      color: $veryLightGray;
+      font-size: 2rem;
+      font-family: $serifDisplay;
+      margin-bottom: 2.8125rem;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    @include devices(tablet-up) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-align: left;
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .pattern-mbl {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .pattern-desktop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 25.62rem;
+  }
+}
